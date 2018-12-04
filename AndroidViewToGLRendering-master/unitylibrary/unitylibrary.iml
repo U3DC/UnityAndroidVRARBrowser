@@ -85,7 +85,6 @@
       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/java" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/rs" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/androidTest/shaders" isTestSource="true" />
-      <excludeFolder url="file://$MODULE_DIR$/build/.DS_Store" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/annotations" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/attr" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/blame" />
@@ -116,6 +115,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Gradle: com.android.support:appcompat-v7-25.4.0" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-fragment-25.4.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.mozilla.geckoview:geckoview-nightly-arm64-v8a-64.0.20180927100037" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:animated-vector-drawable-25.4.0" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-compat-25.4.0" level="project" />
     <orderEntry type="library" name="Gradle: com.android.support:support-v4-25.4.0" level="project" />

@@ -18,6 +18,9 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import org.mozilla.geckoview.GeckoRuntime;
+import org.mozilla.geckoview.GeckoSession;
+import org.mozilla.geckoview.GeckoView;
 import android.webkit.WebChromeClient;
 import android.webkit.WebResourceError;
 import android.webkit.WebResourceRequest;
@@ -29,12 +32,18 @@ import android.widget.RelativeLayout;
 import com.unity3d.player.UnityPlayer;
 import com.unity3d.player.UnityPlayerActivity;
 
+import org.mozilla.geckoview.GeckoSession;
+import org.mozilla.geckoview.GeckoSessionSettings;
+import org.mozilla.geckoview.GeckoView;
+
 import java.io.ByteArrayOutputStream;
 
 public class MainGL extends Fragment {
 
 
-    private BitmapWebView mWebView;
+//    private BitmapWebView mWebView;
+    private UnityGeckoView mWebView;
+
     PluginInterfaceBitmap UnityBitmapCallback;
     static String FRAGMENT_TAG = "AndroidUnityMainGL";
     View mView;
@@ -74,12 +83,12 @@ public class MainGL extends Fragment {
     }
 
     // not tested yet
-    public void Zoom(boolean in){
-         if (in)
-            mWebView.zoomIn();
-         else
-             mWebView.zoomOut();
-    }
+//    public void Zoom(boolean in){
+//         if (in)
+//            mWebView.zoomIn();
+//         else
+//             mWebView.zoomOut();
+//    }
 
 
     // used by unity when canvas is enabled, you must call this yourself
@@ -179,16 +188,16 @@ public class MainGL extends Fragment {
             mWebView.dispatchKeyEvent(events[i]); // MainWebView is webview
     }
 
-    public void StopWebview(){
-        final Activity a = UnityPlayer.currentActivity;
-        a.runOnUiThread(new Runnable() {public void run() {
-            if (mWebView == null) {
-                return;
-            }
-            mWebView.stopLoading();
-        }});
-
-    }
+//    public void StopWebview(){
+//        final Activity a = UnityPlayer.currentActivity;
+//        a.runOnUiThread(new Runnable() {public void run() {
+//            if (mWebView == null) {
+//                return;
+//            }
+//            mWebView.stopLoading();
+//        }});
+//
+//    }
 
     public void Scroll( final int yScrollBy){
         final Activity a = UnityPlayer.currentActivity;
@@ -297,6 +306,7 @@ public class MainGL extends Fragment {
             if (mWebView == null) {
                 return;
             }
+
             mWebView.loadUrl(url);;
 
         }});
@@ -357,6 +367,32 @@ public class MainGL extends Fragment {
 
         if (bm == null)
             initBitmapStuff();
+
+        // testing geckoview
+        mWebView = (UnityGeckoView) view.findViewById(R.id.geckoview);
+
+        mWebView.session = new GeckoSession();
+        mWebView.runtime = GeckoRuntime.create(getContext());
+
+        mWebView.session.open(mWebView.runtime);
+        mWebView.setSession(mWebView.session);
+
+        ViewGroup.LayoutParams params = mWebView.getLayoutParams();
+        params.width = outputWindowWidth;
+        params.height = ViewGroup.LayoutParams.WRAP_CONTENT;
+        mWebView.setLayoutParams(params);
+        mWebView.mainGL=this;
+        mWebView.setDrawingCacheEnabled(true);
+
+        mWebView.setVisibility(View.VISIBLE);
+        mWebView.setAlpha(0.0f);
+        mWebView.setVerticalScrollBarEnabled(true);
+
+//        GeckoSessionSettings webSettings = mWebView.getSession().getSettings();
+
+
+        /*
+
 
         // if we're re-initing the view, destroy the old one
         if (mWebView != null) {
@@ -507,6 +543,7 @@ public class MainGL extends Fragment {
             }
         });
 
+        */
         Log.d("AndroidUnity","webview init-ed!");
     }
 
@@ -525,6 +562,7 @@ public class MainGL extends Fragment {
         Log.d("AndroidUnity","On Create View!");
         WebView.enableSlowWholeDocumentDraw();
         BitmapWebView.enableSlowWholeDocumentDraw();
+
 
         // can use this to not show window
 //        getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.ADJUST_NOTHING|     WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);

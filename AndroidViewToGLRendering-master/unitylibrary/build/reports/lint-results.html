@@ -173,10 +173,10 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 11 warnings</span>
+      <span class="mdl-layout-title">Lint Report: 10 warnings</span>
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-Check performed at Sat Dec 01 08:00:56 MST 2018      </nav>
+Check performed at Tue Dec 04 15:11:20 MST 2018      </nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -184,9 +184,7 @@ Check performed at Sat Dec 01 08:00:56 MST 2018      </nav>
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="#overview"><i class="material-icons">dashboard</i>Overview</a>
       <a class="mdl-navigation__link" href="#OldTargetApi"><i class="material-icons warning-icon">warning</i>Target SDK attribute is not targeting latest version (1)</a>
-      <a class="mdl-navigation__link" href="#SetJavaScriptEnabled"><i class="material-icons warning-icon">warning</i>Using <code>setJavaScriptEnabled</code> (1)</a>
-      <a class="mdl-navigation__link" href="#UnusedResources"><i class="material-icons warning-icon">warning</i>Unused resources (8)</a>
-      <a class="mdl-navigation__link" href="#ClickableViewAccessibility"><i class="material-icons warning-icon">warning</i>Accessibility in Custom Views (1)</a>
+      <a class="mdl-navigation__link" href="#UnusedResources"><i class="material-icons warning-icon">warning</i>Unused resources (9)</a>
     </nav>
   </div>
   <main class="mdl-layout__content">
@@ -204,21 +202,11 @@ Check performed at Sat Dec 01 08:00:56 MST 2018      </nav>
 <tr>
 <td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#OldTargetApi">OldTargetApi</a>: Target SDK attribute is not targeting latest version</td></tr>
-<tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Security">Security</a>
-</td></tr>
-<tr>
-<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
-<a href="#SetJavaScriptEnabled">SetJavaScriptEnabled</a>: Using <code>setJavaScriptEnabled</code></td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Performance">Performance</a>
 </td></tr>
 <tr>
-<td class="countColumn">8</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">9</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#UnusedResources">UnusedResources</a>: Unused resources</td></tr>
-<tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Accessibility">Accessibility</a>
-</td></tr>
-<tr>
-<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
-<a href="#ClickableViewAccessibility">ClickableViewAccessibility</a>: Accessibility in Custom Views</td></tr>
 <tr><td></td><td class="categoryColumn"><a href="#MissingIssues">Disabled Checks (23)</a>
 </td></tr></table>
 <br/>              </div>
@@ -246,6 +234,7 @@ Consult the android.os.Build.VERSION_CODES javadoc for details.</span><br /><pre
 <span class="caretline"><span class="lineno"> 11 </span>        <span class="warning">targetSdkVersion <span class="number">25</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno"> 12 </span>        versionCode <span class="number">1</span>
 <span class="lineno"> 13 </span>        versionName <span class="string">"1.0"</span>
+<span class="lineno"> 14 </span>    }
 </pre>
 
 </div>
@@ -279,54 +268,6 @@ Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id
 Dismiss</button>            </div>
             </div>
           </section>
-<a name="Security"></a>
-<a name="SetJavaScriptEnabled"></a>
-<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="SetJavaScriptEnabledCard" style="display: block;">
-            <div class="mdl-card mdl-cell mdl-cell--12-col">
-  <div class="mdl-card__title">
-    <h2 class="mdl-card__title-text">Using setJavaScriptEnabled</h2>
-  </div>
-              <div class="mdl-card__supporting-text">
-<div class="issue">
-<div class="warningslist">
-<span class="location"><a href="../../src/main/java/com/unityexport/ian/unitylibrary/MainGL.java">../../src/main/java/com/unityexport/ian/unitylibrary/MainGL.java</a>:393</span>: <span class="message">Using <code>setJavaScriptEnabled</code> can introduce XSS vulnerabilities into your application, review carefully.</span><br /><pre class="errorlines">
-<span class="lineno"> 390 </span>        mWebView.setVerticalScrollBarEnabled(<span class="keyword">true</span>);
-<span class="lineno"> 391 </span>
-<span class="lineno"> 392 </span>        WebSettings webSettings = mWebView.getSettings();
-<span class="caretline"><span class="lineno"> 393 </span>        <span class="warning">webSettings.setJavaScriptEnabled(<span class="keyword">true</span>)</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 394 </span>        webSettings.setSupportZoom(<span class="keyword">true</span>);
-<span class="lineno"> 395 </span>        webSettings.setBuiltInZoomControls(<span class="keyword">true</span>);
-<span class="lineno"> 396 </span>        webSettings.setDisplayZoomControls(<span class="keyword">false</span>);
-</pre>
-
-</div>
-<div class="metadata"><div class="explanation" id="explanationSetJavaScriptEnabled" style="display: none;">
-Your code should not invoke <code>setJavaScriptEnabled</code> if you are not sure that your app really requires JavaScript support.<br/><div class="moreinfo">More info: <a href="http://developer.android.com/guide/practices/security.html">http://developer.android.com/guide/practices/security.html</a>
-</div>To suppress this error, use the issue id "SetJavaScriptEnabled" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
-<br/></div>
-</div>
-</div>
-<div class="chips">
-<span class="mdl-chip">
-    <span class="mdl-chip__text">SetJavaScriptEnabled</span>
-</span>
-<span class="mdl-chip">
-    <span class="mdl-chip__text">Security</span>
-</span>
-<span class="mdl-chip">
-    <span class="mdl-chip__text">Warning</span>
-</span>
-<span class="mdl-chip">
-    <span class="mdl-chip__text">Priority 6/10</span>
-</span>
-</div>
-              </div>
-              <div class="mdl-card__actions mdl-card--border">
-<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationSetJavaScriptEnabledLink" onclick="reveal('explanationSetJavaScriptEnabled');">
-Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="SetJavaScriptEnabledCardLink" onclick="hideid('SetJavaScriptEnabledCard');">
-Dismiss</button>            </div>
-            </div>
-          </section>
 <a name="Performance"></a>
 <a name="UnusedResources"></a>
 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="UnusedResourcesCard" style="display: block;">
@@ -343,9 +284,19 @@ Dismiss</button>            </div>
 <span class="lineno"> 3 </span><span class="tag">&lt;/resources></span>
 </pre>
 
+<span class="location"><a href="../../src/main/res/layout/extralayouts.xml">../../src/main/res/layout/extralayouts.xml</a>:2</span>: <span class="message">The resource <code>R.layout.extralayouts</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 1 </span><span class="prologue">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="caretline"><span class="lineno"> 2 </span><span class="warning"><span class="tag">&lt;com.unityexport.ian.unitylibrary.BitmapWebView</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span></span></span>
+<span class="lineno"> 3 </span>    <span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"wrap_content"</span>
+<span class="lineno"> 4 </span>    <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"wrap_content"</span>
+<span class="lineno"> 5 </span>    <span class="prefix">android:</span><span class="attribute">foregroundGravity</span>=<span class="value">"top|center_horizontal"</span>>
+</pre>
+
 <span class="location"><a href="../../src/main/res/raw/per_pixel_fragment_shader.glsl">../../src/main/res/raw/per_pixel_fragment_shader.glsl</a></span>: <span class="message">The resource <code>R.raw.per_pixel_fragment_shader</code> appears to be unused</span><br />
 <span class="location"><a href="../../src/main/res/raw/per_pixel_vertex_shader.glsl">../../src/main/res/raw/per_pixel_vertex_shader.glsl</a></span>: <span class="message">The resource <code>R.raw.per_pixel_vertex_shader</code> appears to be unused</span><br />
 <span class="location"><a href="../../src/main/res/raw/point_fragment_shader.glsl">../../src/main/res/raw/point_fragment_shader.glsl</a></span>: <span class="message">The resource <code>R.raw.point_fragment_shader</code> appears to be unused</span><br />
+<button class="mdl-button mdl-js-button mdl-button--primary" id="UnusedResourcesDivLink" onclick="reveal('UnusedResourcesDiv');" />+ 4 More Occurrences...</button>
+<div id="UnusedResourcesDiv" style="display: none">
 <span class="location"><a href="../../src/main/res/raw/point_vertex_shader.glsl">../../src/main/res/raw/point_vertex_shader.glsl</a></span>: <span class="message">The resource <code>R.raw.point_vertex_shader</code> appears to be unused</span><br />
 <span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:2</span>: <span class="message">The resource <code>R.string.app_name</code> appears to be unused</span><br /><pre class="errorlines">
 <span class="lineno"> 1 </span><span class="tag">&lt;resources></span>
@@ -371,6 +322,7 @@ Dismiss</button>            </div>
 </pre>
 
 </div>
+</div>
 <div class="metadata"><div class="explanation" id="explanationUnusedResources" style="display: none;">
 Unused resources make applications larger and slow down builds.<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
 To suppress this error, use the issue id "UnusedResources" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
@@ -395,53 +347,6 @@ To suppress this error, use the issue id "UnusedResources" as explained in the <
               <div class="mdl-card__actions mdl-card--border">
 <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationUnusedResourcesLink" onclick="reveal('explanationUnusedResources');">
 Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="UnusedResourcesCardLink" onclick="hideid('UnusedResourcesCard');">
-Dismiss</button>            </div>
-            </div>
-          </section>
-<a name="Accessibility"></a>
-<a name="ClickableViewAccessibility"></a>
-<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="ClickableViewAccessibilityCard" style="display: block;">
-            <div class="mdl-card mdl-cell mdl-cell--12-col">
-  <div class="mdl-card__title">
-    <h2 class="mdl-card__title-text">Accessibility in Custom Views</h2>
-  </div>
-              <div class="mdl-card__supporting-text">
-<div class="issue">
-<div class="warningslist">
-<span class="location"><a href="../../src/main/java/com/unityexport/ian/unitylibrary/MainGL.java">../../src/main/java/com/unityexport/ian/unitylibrary/MainGL.java</a>:407</span>: <span class="message"><code>onTouch</code> should call <code>View#performClick</code> when a click is detected</span><br /><pre class="errorlines">
-<span class="lineno"> 404 </span>        mWebView.setOnTouchListener(<span class="keyword">new</span> View.OnTouchListener() {
-<span class="lineno"> 405 </span>
-<span class="lineno"> 406 </span>            <span class="annotation">@Override</span>
-<span class="caretline"><span class="lineno"> 407 </span>            <span class="keyword">public</span> <span class="keyword">boolean</span> <span class="warning">onTouch</span>(View v, MotionEvent event) {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 408 </span>                WebView.HitTestResult hr = ((BitmapWebView) v).getHitTestResult();
-<span class="lineno"> 409 </span>                Log.d(<span class="string">"AndroidUnity"</span>,<span class="string">"on touch called!"</span>);
-<span class="lineno"> 410 </span>                Log.d(<span class="string">"AndroidUnity"</span>,<span class="string">"scroll "</span> + mWebView.getScrollY());
-</pre>
-
-</div>
-<div class="metadata"><div class="explanation" id="explanationClickableViewAccessibility" style="display: none;">
-If a <code>View</code> that overrides <code>onTouchEvent</code> or uses an <code>OnTouchListener</code> does not also implement <code>performClick</code> and call it when clicks are detected, the <code>View</code> may not handle accessibility actions properly. Logic handling the click actions should ideally be placed in <code>View#performClick</code> as some accessibility services invoke <code>performClick</code> when a click action should occur.<br/>To suppress this error, use the issue id "ClickableViewAccessibility" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
-<br/></div>
-</div>
-</div>
-<div class="chips">
-<span class="mdl-chip">
-    <span class="mdl-chip__text">ClickableViewAccessibility</span>
-</span>
-<span class="mdl-chip">
-    <span class="mdl-chip__text">Accessibility</span>
-</span>
-<span class="mdl-chip">
-    <span class="mdl-chip__text">Warning</span>
-</span>
-<span class="mdl-chip">
-    <span class="mdl-chip__text">Priority 6/10</span>
-</span>
-</div>
-              </div>
-              <div class="mdl-card__actions mdl-card--border">
-<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationClickableViewAccessibilityLink" onclick="reveal('explanationClickableViewAccessibility');">
-Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="ClickableViewAccessibilityCardLink" onclick="hideid('ClickableViewAccessibilityCard');">
 Dismiss</button>            </div>
             </div>
           </section>

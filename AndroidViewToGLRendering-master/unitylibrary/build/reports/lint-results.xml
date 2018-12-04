@@ -15,26 +15,8 @@
         errorLine2="        ~~~~~~~~~~~~~~~~~~~"
         quickfix="studio">
         <location
-            file="/Users/iansp/Documents/BlueAlloy/Android/AndroidViewToGLRendering-master/unitylibrary/build.gradle"
+            file="/Users/iansp/Documents/BlueAlloy/Android/UnityAndroidVRBrowser/AndroidViewToGLRendering-master/unitylibrary/build.gradle"
             line="11"
-            column="9"/>
-    </issue>
-
-    <issue
-        id="SetJavaScriptEnabled"
-        severity="Warning"
-        message="Using `setJavaScriptEnabled` can introduce XSS vulnerabilities into your application, review carefully."
-        category="Security"
-        priority="6"
-        summary="Using `setJavaScriptEnabled`"
-        explanation="Your code should not invoke `setJavaScriptEnabled` if you are not sure that your app really requires JavaScript support."
-        url="http://developer.android.com/guide/practices/security.html"
-        urls="http://developer.android.com/guide/practices/security.html"
-        errorLine1="        webSettings.setJavaScriptEnabled(true);"
-        errorLine2="        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
-        <location
-            file="/Users/iansp/Documents/BlueAlloy/Android/AndroidViewToGLRendering-master/unitylibrary/src/main/java/com/unityexport/ian/unitylibrary/MainGL.java"
-            line="393"
             column="9"/>
     </issue>
 
@@ -50,9 +32,26 @@
         errorLine2="           ~~~~~~~~~~~~~~~~~"
         quickfix="studio">
         <location
-            file="/Users/iansp/Documents/BlueAlloy/Android/AndroidViewToGLRendering-master/unitylibrary/src/main/res/values/dimens.xml"
+            file="/Users/iansp/Documents/BlueAlloy/Android/UnityAndroidVRBrowser/AndroidViewToGLRendering-master/unitylibrary/src/main/res/values/dimens.xml"
             line="2"
             column="12"/>
+    </issue>
+
+    <issue
+        id="UnusedResources"
+        severity="Warning"
+        message="The resource `R.layout.extralayouts` appears to be unused"
+        category="Performance"
+        priority="3"
+        summary="Unused resources"
+        explanation="Unused resources make applications larger and slow down builds."
+        errorLine1="&lt;com.unityexport.ian.unitylibrary.BitmapWebView xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;"
+        errorLine2="^"
+        quickfix="studio">
+        <location
+            file="/Users/iansp/Documents/BlueAlloy/Android/UnityAndroidVRBrowser/AndroidViewToGLRendering-master/unitylibrary/src/main/res/layout/extralayouts.xml"
+            line="2"
+            column="1"/>
     </issue>
 
     <issue
@@ -65,7 +64,7 @@
         explanation="Unused resources make applications larger and slow down builds."
         quickfix="studio">
         <location
-            file="/Users/iansp/Documents/BlueAlloy/Android/AndroidViewToGLRendering-master/unitylibrary/src/main/res/raw/per_pixel_fragment_shader.glsl"/>
+            file="/Users/iansp/Documents/BlueAlloy/Android/UnityAndroidVRBrowser/AndroidViewToGLRendering-master/unitylibrary/src/main/res/raw/per_pixel_fragment_shader.glsl"/>
     </issue>
 
     <issue
@@ -78,7 +77,7 @@
         explanation="Unused resources make applications larger and slow down builds."
         quickfix="studio">
         <location
-            file="/Users/iansp/Documents/BlueAlloy/Android/AndroidViewToGLRendering-master/unitylibrary/src/main/res/raw/per_pixel_vertex_shader.glsl"/>
+            file="/Users/iansp/Documents/BlueAlloy/Android/UnityAndroidVRBrowser/AndroidViewToGLRendering-master/unitylibrary/src/main/res/raw/per_pixel_vertex_shader.glsl"/>
     </issue>
 
     <issue
@@ -91,7 +90,7 @@
         explanation="Unused resources make applications larger and slow down builds."
         quickfix="studio">
         <location
-            file="/Users/iansp/Documents/BlueAlloy/Android/AndroidViewToGLRendering-master/unitylibrary/src/main/res/raw/point_fragment_shader.glsl"/>
+            file="/Users/iansp/Documents/BlueAlloy/Android/UnityAndroidVRBrowser/AndroidViewToGLRendering-master/unitylibrary/src/main/res/raw/point_fragment_shader.glsl"/>
     </issue>
 
     <issue
@@ -104,7 +103,7 @@
         explanation="Unused resources make applications larger and slow down builds."
         quickfix="studio">
         <location
-            file="/Users/iansp/Documents/BlueAlloy/Android/AndroidViewToGLRendering-master/unitylibrary/src/main/res/raw/point_vertex_shader.glsl"/>
+            file="/Users/iansp/Documents/BlueAlloy/Android/UnityAndroidVRBrowser/AndroidViewToGLRendering-master/unitylibrary/src/main/res/raw/point_vertex_shader.glsl"/>
     </issue>
 
     <issue
@@ -119,7 +118,7 @@
         errorLine2="            ~~~~~~~~~~~~~~~"
         quickfix="studio">
         <location
-            file="/Users/iansp/Documents/BlueAlloy/Android/AndroidViewToGLRendering-master/unitylibrary/src/main/res/values/strings.xml"
+            file="/Users/iansp/Documents/BlueAlloy/Android/UnityAndroidVRBrowser/AndroidViewToGLRendering-master/unitylibrary/src/main/res/values/strings.xml"
             line="2"
             column="13"/>
     </issue>
@@ -136,7 +135,7 @@
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~~~~~"
         quickfix="studio">
         <location
-            file="/Users/iansp/Documents/BlueAlloy/Android/AndroidViewToGLRendering-master/unitylibrary/src/main/res/values/strings.xml"
+            file="/Users/iansp/Documents/BlueAlloy/Android/UnityAndroidVRBrowser/AndroidViewToGLRendering-master/unitylibrary/src/main/res/values/strings.xml"
             line="3"
             column="13"/>
     </issue>
@@ -153,25 +152,9 @@
         errorLine2="            ~~~~~~~~~~~~~~~~~~~~~~"
         quickfix="studio">
         <location
-            file="/Users/iansp/Documents/BlueAlloy/Android/AndroidViewToGLRendering-master/unitylibrary/src/main/res/values/strings.xml"
+            file="/Users/iansp/Documents/BlueAlloy/Android/UnityAndroidVRBrowser/AndroidViewToGLRendering-master/unitylibrary/src/main/res/values/strings.xml"
             line="4"
             column="13"/>
-    </issue>
-
-    <issue
-        id="ClickableViewAccessibility"
-        severity="Warning"
-        message="`onTouch` should call `View#performClick` when a click is detected"
-        category="Accessibility"
-        priority="6"
-        summary="Accessibility in Custom Views"
-        explanation="If a `View` that overrides `onTouchEvent` or uses an `OnTouchListener` does not also implement `performClick` and call it when clicks are detected, the `View` may not handle accessibility actions properly. Logic handling the click actions should ideally be placed in `View#performClick` as some accessibility services invoke `performClick` when a click action should occur."
-        errorLine1="            public boolean onTouch(View v, MotionEvent event) {"
-        errorLine2="                           ~~~~~~~">
-        <location
-            file="/Users/iansp/Documents/BlueAlloy/Android/AndroidViewToGLRendering-master/unitylibrary/src/main/java/com/unityexport/ian/unitylibrary/MainGL.java"
-            line="407"
-            column="28"/>
     </issue>
 
 </issues>

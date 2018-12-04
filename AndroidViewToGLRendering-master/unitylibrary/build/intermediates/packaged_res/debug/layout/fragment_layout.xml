@@ -12,6 +12,12 @@
     android:layout_height="wrap_content"
     android:foregroundGravity="top|center_horizontal"
 />
+    <com.unityexport.ian.unitylibrary.UnityGeckoView
+        android:id="@+id/geckoview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:foregroundGravity="top|center_horizontal"
+        />
 
 
 </RelativeLayout>
